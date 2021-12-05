@@ -9,23 +9,25 @@ driver.get("https://www.jetpunk.com/user-quizzes/91108/multiplication-table-quiz
 driver.maximize_window()
 
 
-def fillIn():
+def fillin():
     start = driver.find_element(By.CLASS_NAME, "green")
     start.click()
 
-    inputField = driver.find_element(By.ID, "txt-answer-box")
+    inputfield = driver.find_element(By.ID, "txt-answer-box")
 
     x = 1
     y = 1
     answers = []
-    index = 1
 
-    while y <= 12:
-        answers.append(x * y)
-        y+=1
+    while x <= 12:
+        while y <= 12:
+            answers.append(x * y)
+            y+=1
+        x+=1
+        y = 1
 
     for answer in answers:
-        inputField.send_keys(answer)
+        inputfield.send_keys(answer)
 
 
-fillIn()
+fillin()
