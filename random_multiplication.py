@@ -12,10 +12,17 @@ driver.maximize_window()
 outcoms = []
 
 sums = driver.find_elements(By.CLASS_NAME, "gx2 .h")
+start = driver.find_element(By.CLASS_NAME, "green")
+start.click()
+
+inputfield = driver.find_element(By.ID, "txt-answer-box")
 
 for sum in sums:
-    if sum == "":
-        print("empty sum")
+    if len(sums) == 0:
+        print("empty")
     else:
         split_sum = sum.text.split()
-        print(split_sum)
+        if len(split_sum) == 0:
+            continue
+        split_sum.remove("x")
+        inputfield.send_keys(int(split_sum[0]) * int(split_sum[1]))
