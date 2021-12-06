@@ -8,7 +8,7 @@ s = Service('chromedriver')
 
 driver = webdriver.Chrome(service=s)
 driver.get("https://www.jetpunk.com/user-quizzes/176412/fast-math-randomized-multiplication-in-30-seconds")
-# driver.maximize_window()
+driver.maximize_window()
 
 
 outcomes = []

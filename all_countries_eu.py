@@ -1,8 +1,10 @@
+import time
+
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 
-s = Service('chromedriver.exe')
+s = Service('chromedriver')
 driver = webdriver.Chrome(service=s)
 driver.get("https://www.jetpunk.com/quizzes/landen-van-de-wereld")
 driver.maximize_window()
